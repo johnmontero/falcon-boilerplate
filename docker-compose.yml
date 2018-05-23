@@ -1,0 +1,15 @@
+version: '3'
+services:
+  api:
+    image: app
+    build: ./app
+    container_name: app_api
+    volumes:
+      - ./app:/usr/src/app
+    working_dir: /usr/src/app
+    # command: dockerize -wait tcp://redis:6379 -timeout 60s jinsei runserver --port 8000
+    command: api run --port 5000
+    environment:
+      TZ: America/Lima
+    ports:
+      - "5000:5000"

@@ -1,0 +1,5 @@
+click==6.7
+falcon==1.4.1
+PyYAML==3.12
+gunicorn==19.7
+jsonschema==2.6.0
