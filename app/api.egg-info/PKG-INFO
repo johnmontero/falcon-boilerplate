@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: api
+Version: 0.0.1
+Summary: API falcon boilerplate
+Home-page: UNKNOWN
+Author: John Montero Chunga
+Author-email: jmonteroc [at] gmail.com
+License: MIT
+Description: Api falcon boilerplate
+Keywords: api,falcon,rest
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Utilities
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
