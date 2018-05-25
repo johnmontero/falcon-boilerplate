@@ -35,7 +35,7 @@ class UserSingle(SingleResource):
     def on_get(self, req, resp, **kwargs):
         super(UserSingle, self).on_get(req, resp, **kwargs)
         result = { "id": kwargs['id']}
-        resp.body = json.dumps(result)
+        resp.media = result
 
     @validate(load_schema('user_creation'))
     def on_put(self, req, resp, **kwargs):
@@ -52,4 +52,4 @@ class UserSingle(SingleResource):
             "id": kwargs['id'],
             "method": req.method.upper()
             }
-        resp.body = json.dumps(result)
+        resp.media = result

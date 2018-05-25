@@ -16,12 +16,12 @@ class CollectionResource(BaseResource):
 
     @method_exception
     def on_get(self, req, resp, *args, **kwargs):
-        resp.body = json.dumps([])
+        resp.media = []
 
 
 class SingleResource(BaseResource):
     
     @method_exception
     def on_get(self, req, resp, *args, **kwargs):
-        resp.body = json.dumps({})
+        resp.media = {}
     

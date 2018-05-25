@@ -1,5 +1,4 @@
 FROM alvarolizama/python27
-MAINTAINER John Montero <jmonteroc@gmail.com>
 
 ENV PYTHONUNBUFFERED 1
 
