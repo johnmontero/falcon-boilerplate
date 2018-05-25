@@ -5,6 +5,7 @@ IMAGE_NAME = app
 PROYECT_NAME = app
 CONTAINER_NAME = app
 CONTAINER_OWNER = app
+APP_DIR         = "app"
 
 ######## Manage containers status (default target = all)
 status: ## Show containers status, use me with: make status target=api
@@ -27,6 +28,7 @@ delete: ## Delete the docker containers, use me with: make delete target=api
 
 build: ## Build the docker containers, use me with: make build target=api
 	docker-compose build ${target}
+	make install-app
 
 rebuild: ## Rebuild the docker containers, use me with: make rebuild
 	make stop
@@ -37,8 +39,11 @@ rebuild: ## Rebuild the docker containers, use me with: make rebuild
 logs: ## Logss the docker containers, use me with: make logs target=api
 	docker-compose logs -f ${target}
 
-ssh: ## SSH connect to container, se me with: make ssh target=api
-		docker-compose -p $(PROYECT_NAME) run --rm ${target} sh -c "bash"
+ssh: ## SSH connect to container, use me with: make ssh target=api
+	docker container run --workdir "/${APP_DIR}" --rm -it -v "${PWD}/${APP_DIR}":/${APP_DIR} ${IMAGE_NAME} "/bin/bash"
+
+install-app: ## Instala la app en el container
+	docker container run --workdir "/${APP_DIR}" --rm -it -v "${PWD}/${APP_DIR}":/${APP_DIR} --tty=false ${IMAGE_NAME}  pip install -e .
 
 ######## Manage containers execution
 exec: ## Execute command in the docker container, use me with: make exec target=api cmd=ls
